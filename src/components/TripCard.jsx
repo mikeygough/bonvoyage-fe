@@ -19,7 +19,7 @@ export default function TripCard({ tripData }) {
         <h3>{tripData.title}</h3>
         {data &&
           data.map((activity) => (
-            <div>
+            <div key={activity.name}>
               <p>{activity.name}</p>
             </div>
           ))}

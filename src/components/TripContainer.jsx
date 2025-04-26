@@ -1,40 +1,24 @@
-// TODO
-// Refactor this to use RTK Query...
-
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  fetchTrips,
-  selectAllTrips,
-  selectAllTripsStatus,
-} from '../redux/tripSlice';
+import React from 'react';
+import { useGetTripsQuery } from '../redux/apiSlice';
 
 import TripCard from './TripCard';
 
 export default function TripContainer() {
-  const dispatch = useDispatch();
-  const trips = useSelector(selectAllTrips);
-  const status = useSelector(selectAllTripsStatus);
+  const { data, error, isLoading } = useGetTripsQuery();
 
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchTrips());
-    }
-  }, [status, dispatch]);
-
-  if (status === 'loading') {
+  if (isLoading) {
     return <div>Loading trips...</div>;
   }
 
-  if (status === 'failed') {
+  if (error) {
     return <div>Error loading trips...</div>;
   }
 
   return (
     <>
       <h2>Upcoming Trips</h2>
-      {trips &&
-        trips.map((trip) => (
+      {data &&
+        data.map((trip) => (
           <TripCard key={trip.id} tripData={trip} />
         ))}
     </>
