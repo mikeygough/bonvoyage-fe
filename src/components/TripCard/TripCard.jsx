@@ -1,6 +1,8 @@
 import React from 'react';
 import { useGetActivitiesByTripQuery } from '../../redux/apiSlice';
 
+import ActivityForm from '../ActivityForm/ActivityForm';
+
 import './TripCard.css';
 
 export default function TripCard({ trip }) {
@@ -44,6 +46,8 @@ export default function TripCard({ trip }) {
             ))}
           </ul>
         )}
+
+        <ActivityForm trip={trip} />
       </div>
     </>
   );

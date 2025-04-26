@@ -35,7 +35,7 @@ export default function TripForm() {
       setEndDate('');
       setBudget('');
     } catch (err) {
-      console.log('Failed to create the trip', err);
+      console.log('Failed to create trip', err);
     }
   };
 
