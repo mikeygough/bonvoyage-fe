@@ -1,3 +1,6 @@
+// TODO
+// Refactor this to use RTK Query...
+
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
