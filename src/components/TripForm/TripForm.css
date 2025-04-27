@@ -1,5 +1,39 @@
+.TripForm__wrapper {
+  margin: 1rem;
+}
+
 .TripForm__form {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    'title description description'
+    'start end budget'
+    'submit . .';
+  grid-template-columns: repeat(1fr, 3);
+  width: 75%;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.TripForm__input__title {
+  grid-area: title;
+}
+
+.TripForm__input__description {
+  grid-area: description;
+}
+
+.TripForm__input__startdate {
+  grid-area: start;
+}
+
+.TripForm__input__enddate {
+  grid-area: end;
+}
+
+.TripForm__input__budgetdate {
+  grid-area: budget;
+}
+
+.TripForm__input__submit {
+  grid-area: submit;
 }

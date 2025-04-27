@@ -1,9 +1,21 @@
 .TripCard {
   border: 1px solid gray;
-  margin: 1rem;
+  margin: 1rem auto;
   padding: 1rem;
+  width: 75%;
+}
+
+.TripCard__Wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .TripCard__ul {
   margin: 0.5rem 0;
+}
+
+.TripCard__img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
 }

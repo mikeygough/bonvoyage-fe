@@ -8,8 +8,8 @@ import './App.css';
 export default function App() {
   return (
     <>
-      <TripForm />
       <Header></Header>
+      <TripForm />
       <TripContainer />
     </>
   );
