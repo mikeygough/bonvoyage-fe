@@ -1,0 +1,13 @@
+.ActivityForm__form {
+}
+
+.ActivityForm__input__name {
+  margin: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .ActivityForm__submit {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -82,13 +82,106 @@ h6 {
   isolation: isolate;
 }
 
+/* Default Styles */
 body {
   min-height: 100vh;
+  font-size: var(--font-size-base);
+  line-height: var(--leading-relaxed);
   font-family: var(--font-family-sans-serif);
+  letter-spacing: 0.5px;
   background-color: hsl(var(--bg));
   color: hsl(var(--txt));
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Styles added from my own tidycss : )
+  source: https://github.com/mikeygough/tidy-css 
+*/
+/* heading styles */
+h1 {
+  font-size: var(--font-size-5xl);
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  max-width: var(--max-w-h1);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  line-height: var(--leading-snug);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  max-width: var(--max-w-h2);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  line-height: var(--leading-normal);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  max-width: var(--max-w-h3);
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+  line-height: var(--leading-normal);
+  font-weight: 600;
+  max-width: var(--max-w-h4);
+  margin-bottom: 0.75rem;
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+  line-height: var(--leading-normal);
+  font-weight: 600;
+  max-width: var(--max-w-h5);
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+  line-height: var(--leading-normal);
+  font-weight: 600;
+  max-width: var(--max-w-h6);
+  margin-bottom: 0.5rem;
+}
+
+/* paragraph styles */
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--leading-relaxed);
+  max-width: var(--max-w-prose);
+}
+
+/* responsive heading & p adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h4 {
+    font-size: var(--font-size-xl);
+  }
+
+  h5 {
+    font-size: var(--font-size-lg);
+  }
+
+  h6 {
+    font-size: var(--font-size-base);
+  }
 }
 
 ::selection {

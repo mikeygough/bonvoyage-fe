@@ -33,11 +33,16 @@ export default function ActivityForm({ trip }) {
         <input
           type="text"
           placeholder="Activity Name"
+          className="ActivityForm__input__name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         ></input>
 
-        <button type="submit" disabled={isLoading}>
+        <button
+          type="submit"
+          className="ActivityForm__submit"
+          disabled={isLoading}
+        >
           Add Activity
         </button>
       </form>

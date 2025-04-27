@@ -47,12 +47,12 @@ export default function TripCard({ trip }) {
               ))}
             </ul>
           )}
+          <ActivityForm trip={trip} />
         </div>
-        <div>
+        <div className="TripCard__img__wrapper">
           <img className="TripCard__img" src={trip.image_url}></img>
         </div>
       </div>
-      <ActivityForm trip={trip} />
     </div>
   );
 }
