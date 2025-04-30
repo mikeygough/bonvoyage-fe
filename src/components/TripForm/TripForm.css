@@ -37,3 +37,11 @@
 .TripForm__input__submit {
   grid-area: submit;
 }
+
+@media screen and (max-width: 500px) {
+  .TripForm__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

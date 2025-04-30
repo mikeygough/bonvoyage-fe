@@ -6,4 +6,4 @@ todos:
 - [ ] use budget field or remove from the backend
 - [ ] incorporate toast or flash banners when a trip/activity is added
 - [ ] more interactivity
-- [ ] make form mobile responsive
+- [x] make form mobile responsive

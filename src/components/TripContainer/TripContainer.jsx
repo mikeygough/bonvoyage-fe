@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { SORTING } from '../../redux/sortingSlice';
 
 import TripCard from '../TripCard/TripCard';
+import SortingControls from '../SortingControls/SortingControls';
 
 import './TripContainer.css';
 
@@ -35,6 +36,9 @@ export default function TripContainer() {
       <h2 className="TripContainer__h2">
         You have {data.length} upcoming trips!
       </h2>
+      <div className="TripContainer__SortingControls">
+        <SortingControls />
+      </div>
       <div className="TripContainer">
         {data &&
           sortedTrips.map((trip) => (

@@ -2,7 +2,6 @@ import React from 'react';
 import TripContainer from './components/TripContainer/TripContainer';
 import TripForm from './components/TripForm/TripForm';
 import Header from './components/Header/Header';
-import SortingControls from './components/SortingControls/SortingControls';
 
 import './App.css';
 
@@ -11,7 +10,6 @@ export default function App() {
     <>
       <Header></Header>
       <TripForm />
-      <SortingControls />
       <TripContainer />
     </>
   );
