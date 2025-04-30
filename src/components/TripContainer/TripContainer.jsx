@@ -5,6 +5,7 @@ import { SORTING } from '../../redux/sortingSlice';
 
 import TripCard from '../TripCard/TripCard';
 import SortingControls from '../SortingControls/SortingControls';
+import SkeletonTripContainer from '../SkeletonTripContainer/SkeletonTripContainer';
 
 import './TripContainer.css';
 
@@ -13,7 +14,7 @@ export default function TripContainer() {
   const sorting = useSelector((state) => state.sorting);
 
   if (isLoading) {
-    return <div>Loading trips...</div>;
+    return <SkeletonTripContainer />;
   }
 
   if (error) {
