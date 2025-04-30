@@ -1,5 +1,7 @@
 import React from 'react';
 import { useGetTripsQuery } from '../../redux/apiSlice';
+import { useSelector } from 'react-redux';
+import { SORTING } from '../../redux/sortingSlice';
 
 import TripCard from '../TripCard/TripCard';
 
@@ -7,6 +9,7 @@ import './TripContainer.css';
 
 export default function TripContainer() {
   const { data, error, isLoading } = useGetTripsQuery();
+  const sorting = useSelector((state) => state.sorting);
 
   if (isLoading) {
     return <div>Loading trips...</div>;
@@ -16,6 +19,17 @@ export default function TripContainer() {
     return <div>Error loading trips...</div>;
   }
 
+  const sortedTrips = [...data].sort((a, b) => {
+    let a_start = new Date(a.start_date);
+    let b_start = new Date(b.start_date);
+    if (sorting === SORTING.FIRST_DEPARTURE) {
+      return a_start - b_start;
+    }
+    if (sorting === SORTING.LAST_DEPARTURE) {
+      return b_start - a_start;
+    }
+  });
+
   return (
     <div className="TripContainer">
       <h2 className="TripContainer__h2">
@@ -23,7 +37,9 @@ export default function TripContainer() {
       </h2>
       <div className="TripContainer">
         {data &&
-          data.map((trip) => <TripCard key={trip.id} trip={trip} />)}
+          sortedTrips.map((trip) => (
+            <TripCard key={trip.id} trip={trip} />
+          ))}
       </div>
     </div>
   );
