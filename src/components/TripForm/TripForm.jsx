@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useAddTripMutation } from '../../redux/apiSlice';
 
 import './TripForm.css';
 
 export default function TripForm() {
+  const currentDisplayForm = useSelector((state) => state.tripForm);
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [budget, setBudget] = useState('');
-
-  const [displayForm, setDisplayForm] = useState(false);
 
   const [addTrip, { isLoading }] = useAddTripMutation();
 
@@ -43,15 +44,7 @@ export default function TripForm() {
 
   return (
     <div className="TripForm__wrapper">
-      <h2>
-        Traveling somewhere?{' '}
-        <span>
-          <button onClick={() => setDisplayForm(!displayForm)}>
-            Add a new trip!
-          </button>
-        </span>
-      </h2>
-      {displayForm && (
+      {currentDisplayForm && (
         <form className="TripForm__form" onSubmit={handleSubmit}>
           <input
             type="text"
