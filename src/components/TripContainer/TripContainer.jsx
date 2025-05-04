@@ -1,4 +1,7 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { useGetTripsQuery } from '../../redux/apiSlice';
 import { useSelector } from 'react-redux';
 import { SORTING } from '../../redux/sortingSlice';
@@ -12,6 +15,25 @@ import './TripContainer.css';
 export default function TripContainer() {
   const { data, error, isLoading } = useGetTripsQuery();
   const sorting = useSelector((state) => state.sorting);
+  const [sortedTrips, setSortedTrips] = useState([]);
+
+  useEffect(() => {
+    if (!data) return;
+
+    const newSortedTrips = [...data].sort((a, b) => {
+      let a_start = new Date(a.start_date);
+      let b_start = new Date(b.start_date);
+      if (sorting === SORTING.FIRST_DEPARTURE) {
+        return a_start - b_start;
+      }
+      if (sorting === SORTING.LAST_DEPARTURE) {
+        return b_start - a_start;
+      }
+      return 0;
+    });
+
+    setSortedTrips(newSortedTrips);
+  }, [data, sorting]);
 
   if (isLoading) {
     return <SkeletonTripContainer />;
@@ -21,19 +43,8 @@ export default function TripContainer() {
     return <div>Error loading trips...</div>;
   }
 
-  const sortedTrips = [...data].sort((a, b) => {
-    let a_start = new Date(a.start_date);
-    let b_start = new Date(b.start_date);
-    if (sorting === SORTING.FIRST_DEPARTURE) {
-      return a_start - b_start;
-    }
-    if (sorting === SORTING.LAST_DEPARTURE) {
-      return b_start - a_start;
-    }
-  });
-
   return (
-    <div className="TripContainer">
+    <div className="TripContainer__wrapper">
       <h2 className="TripContainer__h2">
         You have {data.length} upcoming trips!
       </h2>
@@ -43,7 +54,17 @@ export default function TripContainer() {
       <div className="TripContainer">
         {data &&
           sortedTrips.map((trip) => (
-            <TripCard key={trip.id} trip={trip} />
+            <motion.div
+              key={`trip-${trip.id}`}
+              layout
+              transition={{
+                type: 'spring',
+                damping: 20,
+                stiffness: 100,
+              }}
+            >
+              <TripCard trip={trip} />
+            </motion.div>
           ))}
       </div>
     </div>

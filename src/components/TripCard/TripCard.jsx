@@ -1,7 +1,11 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
+
 import { useGetActivitiesByTripQuery } from '../../redux/apiSlice';
 
 import ActivityForm from '../ActivityForm/ActivityForm';
+import SkeletonTripCard from '../SkeletonTripCard/SkeletonTripCard';
 
 import './TripCard.css';
 
@@ -10,7 +14,7 @@ export default function TripCard({ trip }) {
     useGetActivitiesByTripQuery(trip);
 
   if (isLoading) {
-    return <div>Loading activities...</div>;
+    return <SkeletonTripCard />;
   }
 
   if (error) {
@@ -34,7 +38,6 @@ export default function TripCard({ trip }) {
             {trip.description} (
             {tripDuration(trip.start_date, trip.end_date)} Days)
           </h4>
-          <h5></h5>
           <h5>
             Departure: {trip.start_date} Return: {trip.end_date}
           </h5>

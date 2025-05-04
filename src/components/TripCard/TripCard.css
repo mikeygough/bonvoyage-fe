@@ -36,11 +36,6 @@
   margin: 0.5rem 0;
 }
 
-.TripCard__Details {
-  /* inline-size: 500px;
-  overflow-wrap: break-word; */
-}
-
 .TripCard__img__wrapper {
   display: flex;
   align-items: center;

@@ -1,13 +1,47 @@
 .SkeletonTripCard {
-  border: 1px solid gray;
+  border: 1px solid rgba(128, 128, 128, 0.487);
   margin: 1rem auto;
   padding: 1rem;
   width: max(400px, 55%);
   height: 300px;
 }
 
+.SkeletonTripCard * {
+  opacity: 0.5;
+}
+
 @media screen and (max-width: 500px) {
   .SkeletonTripCard {
     width: 90%;
   }
+
+  .SkeletonTripCard__Wrapper {
+    flex-direction: column;
+  }
+
+  .SkeletonTripCard__img__wrapper {
+    align-items: revert;
+    justify-content: center;
+  }
+}
+
+.SkeletonTripCard__Wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SkeletonTripCard__ul {
+  margin: 0.5rem 0;
+}
+
+.SkeletonTripCard__img__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.SkeletonTripCard__img {
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }

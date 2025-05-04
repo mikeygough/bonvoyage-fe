@@ -1,3 +1,7 @@
 .SkeletonTripContainer {
   width: 75;
 }
+
+.SkeletonTripContainer__h2 {
+  padding-left: 1rem;
+}
