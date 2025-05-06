@@ -4,6 +4,12 @@
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
 
+  .courgette-regular {
+    font-family: 'Courgette', cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
   /* font sizes */
   --font-size-xs: 0.875rem; /* 14px */
   --font-size-base: 1rem; /* 16px */

@@ -45,9 +45,9 @@ export default function TripContainer() {
 
   return (
     <div className="TripContainer__wrapper">
-      <h2 className="TripContainer__h2">
+      {/* <h2 className="TripContainer__h2">
         You have {data.length} upcoming trips!
-      </h2>
+      </h2> */}
       <div className="TripContainer__SortingControls">
         <SortingControls />
       </div>

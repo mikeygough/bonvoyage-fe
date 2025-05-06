@@ -25,4 +25,6 @@ todos:
 - [x] style dates into more human-readable 'may 6, 2025' notation
 - [ ] add a 'this trip is coming up soon!' type banner for trips less than a month away.
 - [ ] on a similar note... how about trips that have already passed? this could be a rails job perhaps?
-- [ ] custom font for appname
+- [x] custom font for appname
+- [ ] decide to include / exclude image URL
+- [ ] slightly lighter / darker background color for card

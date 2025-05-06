@@ -1,5 +1,10 @@
 .TripForm__wrapper {
-  margin: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5rem;
+  z-index: 1000;
+  padding: 2rem;
+  max-height: 90vh;
+  display: relative;
 }
 
 .TripForm__form {
@@ -8,9 +13,8 @@
     'title description description'
     'start end budget'
     'submit . .';
-  grid-template-columns: repeat(1fr, 3);
-  width: 75%;
-  margin-top: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
   gap: 1rem;
 }
 
@@ -30,7 +34,7 @@
   grid-area: end;
 }
 
-.TripForm__input__budgetdate {
+.TripForm__input__budget {
   grid-area: budget;
 }
 
@@ -44,4 +48,12 @@
     flex-direction: column;
     width: 100%;
   }
+}
+
+.TripForm__close__wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: gray;
+  width: fit-content;
 }

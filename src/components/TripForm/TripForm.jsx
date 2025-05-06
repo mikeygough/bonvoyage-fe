@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+// eslint-disable-next-line no-unused-vars
+import { AnimatePresence, motion } from 'framer-motion';
+
 import { useAddTripMutation } from '../../redux/apiSlice';
+import { setDisplay } from '../../redux/tripFormSlice';
 
 import './TripForm.css';
 
 export default function TripForm() {
+  const dispatch = useDispatch();
   const currentDisplayForm = useSelector((state) => state.tripForm);
 
   const [title, setTitle] = useState('');
@@ -43,65 +48,86 @@ export default function TripForm() {
   };
 
   return (
-    <div className="TripForm__wrapper">
+    <AnimatePresence initial={false}>
       {currentDisplayForm && (
-        <form className="TripForm__form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Title"
-            className="TripForm__input__title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          ></input>
+        <motion.div
+          className="TripForm__wrapper"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, x: '-50%', y: '-50%' }}
+          exit={{ opacity: 0 }}
+          style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            width: '90vw',
+            height: '90vh',
+          }}
+          key="form"
+        >
+          <form className="TripForm__form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Title"
+              className="TripForm__input__title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            ></input>
 
-          <input
-            type="text"
-            placeholder="Description"
-            className="TripForm__input__description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          ></input>
+            <input
+              type="text"
+              placeholder="Description"
+              className="TripForm__input__description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></input>
 
-          {/* <input
+            {/* <input
             type="text"
             placeholder="Image URL"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           ></input> */}
 
-          <input
-            type="text"
-            placeholder="Start Date (YYYY-MM-DD)"
-            className="TripForm__input__startdate"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-          ></input>
+            <input
+              type="text"
+              placeholder="Start Date (YYYY-MM-DD)"
+              className="TripForm__input__startdate"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            ></input>
 
-          <input
-            type="text"
-            placeholder="End Date (YYYY-MM-DD)"
-            className="TripForm__input__enddate"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-          ></input>
+            <input
+              type="text"
+              placeholder="End Date (YYYY-MM-DD)"
+              className="TripForm__input__enddate"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+            ></input>
 
-          <input
-            type="text"
-            placeholder="Budget"
-            className="TripForm__input__button"
-            value={budget}
-            onChange={(e) => setBudget(e.target.value)}
-          ></input>
+            <input
+              type="text"
+              placeholder="Budget"
+              className="TripForm__input__button"
+              value={budget}
+              onChange={(e) => setBudget(e.target.value)}
+            ></input>
 
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="TripForm__input__submit"
+            >
+              Add Trip
+            </button>
+          </form>
           <button
-            type="submit"
-            disabled={isLoading}
-            className="TripForm__input__submit"
+            className="TripForm__close__wrapper"
+            onClick={() => dispatch(setDisplay(!currentDisplayForm))}
           >
-            Add Trip
+            <img src={'/close.svg'} alt="Close Icon"></img>
           </button>
-        </form>
+        </motion.div>
       )}
-    </div>
+    </AnimatePresence>
   );
 }

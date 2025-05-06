@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <div className="Header__Wrapper">
       <header className="Header">
-        <h1>Bon Voyage!</h1>
+        <h1 className="courgette-regular">Bon Voyage!</h1>
         <button
           onClick={() => dispatch(setDisplay(!currentDisplayForm))}
         >
