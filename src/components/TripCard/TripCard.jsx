@@ -24,9 +24,18 @@ export default function TripCard({ trip }) {
   const tripDuration = (start, end) => {
     let startDate = new Date(start).getTime();
     let endDate = new Date(end).getTime();
-    return (
-      Math.round((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1
-    );
+    return Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+  };
+
+  const formatDate = (date) => {
+    let options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    let dateObj = new Date(date);
+    return dateObj.toLocaleDateString('en-US', options); // Saturday, September 17, 2016
   };
 
   return (
@@ -38,8 +47,13 @@ export default function TripCard({ trip }) {
             {trip.description} (
             {tripDuration(trip.start_date, trip.end_date)} Days)
           </h4>
-          <h5>
-            Departure: {trip.start_date} Return: {trip.end_date}
+          <h5 className="TripCard__Departure_Heading">
+            <img src={'/departure.svg'} alt="Departure Icon"></img>
+            {formatDate(trip.start_date)}
+          </h5>
+          <h5 className="TripCard__Arrival_Heading">
+            <img src={'/arrival.svg'} alt="Arrival Icon"></img>
+            {formatDate(trip.end_date)}
           </h5>
           {data && (
             <ul className="TripCard__ul">

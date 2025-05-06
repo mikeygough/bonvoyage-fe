@@ -33,7 +33,12 @@
 }
 
 .TripCard__ul {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
+  padding-left: 1rem;
+}
+
+.TripCard__ul li {
+  margin: 0.25rem 0;
 }
 
 .TripCard__img__wrapper {
@@ -46,4 +51,11 @@
   height: 100%;
   object-fit: cover;
   border-radius: 0.5rem;
+}
+
+.TripCard__Departure_Heading,
+.TripCard__Arrival_Heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

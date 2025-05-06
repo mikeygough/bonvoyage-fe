@@ -111,7 +111,7 @@ h1 {
 h2 {
   font-size: var(--font-size-4xl);
   line-height: var(--leading-snug);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.025em;
   max-width: var(--max-w-h2);
   margin-bottom: 1rem;
@@ -120,7 +120,7 @@ h2 {
 h3 {
   font-size: var(--font-size-3xl);
   line-height: var(--leading-normal);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.025em;
   max-width: var(--max-w-h3);
   margin-bottom: 0.75rem;
@@ -129,7 +129,7 @@ h3 {
 h4 {
   font-size: var(--font-size-2xl);
   line-height: var(--leading-normal);
-  font-weight: 600;
+  font-weight: 400;
   max-width: var(--max-w-h4);
   margin-bottom: 0.75rem;
 }
@@ -137,7 +137,7 @@ h4 {
 h5 {
   font-size: var(--font-size-xl);
   line-height: var(--leading-normal);
-  font-weight: 600;
+  font-weight: 300;
   max-width: var(--max-w-h5);
   margin-bottom: 0.5rem;
 }
@@ -145,7 +145,7 @@ h5 {
 h6 {
   font-size: var(--font-size-lg);
   line-height: var(--leading-normal);
-  font-weight: 600;
+  font-weight: 200;
   max-width: var(--max-w-h6);
   margin-bottom: 0.5rem;
 }

@@ -20,6 +20,9 @@ you _may_ run into a CORS issue when trying to fetch data with a locally running
 
 todos:
 
-- [ ] fix layout shift when styles are applied
 - [ ] use budget field or remove from the backend
 - [ ] incorporate toast or flash banners when a trip/activity is added
+- [x] style dates into more human-readable 'may 6, 2025' notation
+- [ ] add a 'this trip is coming up soon!' type banner for trips less than a month away.
+- [ ] on a similar note... how about trips that have already passed? this could be a rails job perhaps?
+- [ ] custom font for appname
