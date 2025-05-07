@@ -1,8 +1,8 @@
 .ActivityForm__form {
 }
 
-.ActivityForm__input__name {
-  margin: 1rem;
+.ActivityForm__submit {
+  background-color: hsl(var(--accent));
 }
 
 @media screen and (max-width: 500px) {

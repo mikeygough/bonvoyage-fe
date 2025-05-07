@@ -13,9 +13,10 @@ export default function Header() {
       <header className="Header">
         <h1 className="courgette-regular">Bon Voyage!</h1>
         <button
+          className="Header__Button"
           onClick={() => dispatch(setDisplay(!currentDisplayForm))}
         >
-          Add a new trip!
+          Add Trip
         </button>
       </header>
     </div>

@@ -1,45 +1,38 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  z-index: 9;
+}
+
 .TripForm__wrapper {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 0.5rem;
-  z-index: 1000;
+  z-index: 10;
   padding: 2rem;
   max-height: 90vh;
   display: relative;
+  box-shadow: 0 0 10px #ffcc00;
 }
 
 .TripForm__form {
-  display: grid;
-  grid-template-areas:
-    'title description description'
-    'start end budget'
-    'submit . .';
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 3rem;
+  margin: 1rem auto;
 }
 
-.TripForm__input__title {
-  grid-area: title;
-}
-
-.TripForm__input__description {
-  grid-area: description;
-}
-
-.TripForm__input__startdate {
-  grid-area: start;
-}
-
-.TripForm__input__enddate {
-  grid-area: end;
-}
-
-.TripForm__input__budget {
-  grid-area: budget;
-}
-
-.TripForm__input__submit {
-  grid-area: submit;
+.TripForm__form button {
+  width: max-content;
+  align-self: center;
+  background-color: var(--orange);
 }
 
 @media screen and (max-width: 500px) {
@@ -52,8 +45,8 @@
 
 .TripForm__close__wrapper {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -10px;
+  top: -10px;
   background-color: gray;
   width: fit-content;
 }

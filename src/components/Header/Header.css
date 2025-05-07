@@ -3,3 +3,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.Header__Button {
+  padding: 1.5rem;
+  background-color: var(--orange);
+  box-shadow: 0 0 3px #ffcc00;
+}

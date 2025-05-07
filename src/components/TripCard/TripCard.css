@@ -1,9 +1,11 @@
 .TripCard {
-  border: 1px solid gray;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   padding: 1rem;
   width: max(400px, 55%);
   transition-duration: 200ms;
+  background-color: hsl(var(--bg-dark));
+  border-radius: 0.5rem;
+  box-shadow: 0 0 3px #ffcc00;
 }
 
 @media screen and (max-width: 500px) {

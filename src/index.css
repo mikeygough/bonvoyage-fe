@@ -188,3 +188,23 @@ p {
   background: hsl(var(--accent) / 0.8);
   color: hsl(var(--bg));
 }
+
+input {
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+input:focus {
+  outline: 3px solid var(--orange);
+  box-shadow: 0 0 10px #ffcc00;
+}
+
+button {
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+}
