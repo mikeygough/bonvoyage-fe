@@ -17,7 +17,6 @@ export default function TripForm() {
   const [imageUrl, setImageUrl] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [budget, setBudget] = useState('');
 
   const [addTrip, { isLoading }] = useAddTripMutation();
 
@@ -31,7 +30,6 @@ export default function TripForm() {
         image_url: imageUrl,
         start_date: startDate,
         end_date: endDate,
-        budget: parseFloat(budget) || 0,
       };
 
       await addTrip(tripData).unwrap();
@@ -41,7 +39,7 @@ export default function TripForm() {
       setImageUrl('');
       setStartDate('');
       setEndDate('');
-      setBudget('');
+      dispatch(setDisplay(false));
     } catch (err) {
       console.log('Failed to create trip', err);
     }
@@ -81,6 +79,7 @@ export default function TripForm() {
                   className="TripForm__input__title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                  required
                 ></input>
 
                 <input
@@ -89,14 +88,15 @@ export default function TripForm() {
                   className="TripForm__input__description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                  required
                 ></input>
 
-                {/* <input
-            type="text"
-            placeholder="Image URL"
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-          ></input> */}
+                <input
+                  type="text"
+                  placeholder="Image URL"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                ></input>
 
                 <input
                   type="text"
@@ -104,6 +104,7 @@ export default function TripForm() {
                   className="TripForm__input__startdate"
                   value={startDate}
                   onChange={(e) => setStartDate(e.target.value)}
+                  required
                 ></input>
 
                 <input
@@ -112,14 +113,7 @@ export default function TripForm() {
                   className="TripForm__input__enddate"
                   value={endDate}
                   onChange={(e) => setEndDate(e.target.value)}
-                ></input>
-
-                <input
-                  type="text"
-                  placeholder="Budget"
-                  className="TripForm__input__button"
-                  value={budget}
-                  onChange={(e) => setBudget(e.target.value)}
+                  required
                 ></input>
 
                 <button

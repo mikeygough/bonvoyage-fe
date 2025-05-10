@@ -45,12 +45,14 @@ export default function TripContainer() {
 
   return (
     <div className="TripContainer__wrapper">
-      {/* <h2 className="TripContainer__h2">
-        You have {data.length} upcoming trips!
-      </h2> */}
-      <div className="TripContainer__SortingControls">
+      <motion.div
+        className="TripContainer__SortingControls"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <SortingControls />
-      </div>
+      </motion.div>
       <div className="TripContainer">
         {data &&
           sortedTrips.map((trip) => (

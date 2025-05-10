@@ -18,7 +18,7 @@
   padding: 2rem;
   max-height: 90vh;
   display: relative;
-  box-shadow: 0 0 10px #ffcc00;
+  box-shadow: 0 0 5px hsl(var(--accent));
 }
 
 .TripForm__form {

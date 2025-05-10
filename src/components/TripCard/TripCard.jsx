@@ -42,32 +42,64 @@ export default function TripCard({ trip }) {
     <div className="TripCard">
       <div className="TripCard__Wrapper">
         <div className="TripCard__Details">
-          <h3>{trip.title}</h3>
-          <h4>
+          <motion.h3
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {trip.title}
+          </motion.h3>
+          <motion.h4
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
             {trip.description} (
             {tripDuration(trip.start_date, trip.end_date)} Days)
-          </h4>
-          <h5 className="TripCard__Departure_Heading">
+          </motion.h4>
+          <motion.h5
+            className="TripCard__Departure_Heading"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
             <img src={'/departure.svg'} alt="Departure Icon"></img>
             {formatDate(trip.start_date)}
-          </h5>
-          <h5 className="TripCard__Arrival_Heading">
+          </motion.h5>
+          <motion.h5
+            className="TripCard__Arrival_Heading"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
             <img src={'/arrival.svg'} alt="Arrival Icon"></img>
             {formatDate(trip.end_date)}
-          </h5>
+          </motion.h5>
           {data && (
             <ul className="TripCard__ul">
               {data.map((activity) => (
-                <li key={activity.name}>
+                <motion.li
+                  key={activity.name}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
                   <p>{activity.name}</p>
-                </li>
+                </motion.li>
               ))}
             </ul>
           )}
           <ActivityForm trip={trip} />
         </div>
         <div className="TripCard__img__wrapper">
-          <img className="TripCard__img" src={trip.image_url}></img>
+          <img
+            className="TripCard__img"
+            src={
+              trip.image_url
+                ? trip.image_url
+                : './placeholder-trip.png'
+            }
+          ></img>
         </div>
       </div>
     </div>

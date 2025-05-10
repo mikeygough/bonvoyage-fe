@@ -1,6 +1,8 @@
-.TripContainer {
+.TripContainer__wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
-.TripContainer__h2 {
-  padding-left: 1rem;
+.TripContainer__SortingControls {
+  align-self: center;
 }

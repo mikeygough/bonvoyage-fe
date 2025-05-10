@@ -5,7 +5,7 @@
   transition-duration: 200ms;
   background-color: hsl(var(--bg-dark));
   border-radius: 0.5rem;
-  box-shadow: 0 0 3px #ffcc00;
+  box-shadow: 0 0 3px hsl(var(--accent));
 }
 
 @media screen and (max-width: 500px) {
@@ -32,6 +32,11 @@
 .TripCard__Wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.TripCard__Details {
+  display: flex;
+  flex-direction: column;
 }
 
 .TripCard__ul {

@@ -28,7 +28,7 @@ export default function ActivityForm({ trip }) {
   };
 
   return (
-    <div className="ActivityForm__wrappep">
+    <div className="ActivityForm__wrapper">
       <form className="ActivityForm__form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -36,6 +36,7 @@ export default function ActivityForm({ trip }) {
           className="ActivityForm__input__name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         ></input>
 
         <button

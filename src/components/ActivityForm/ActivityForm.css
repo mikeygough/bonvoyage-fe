@@ -1,4 +1,5 @@
-.ActivityForm__form {
+.ActivityForm__wrapper {
+  margin-top: auto;
 }
 
 .ActivityForm__submit {

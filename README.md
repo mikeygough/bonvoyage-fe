@@ -27,4 +27,5 @@ todos:
 - [ ] on a similar note... how about trips that have already passed? this could be a rails job perhaps?
 - [x] custom font for appname
 - [ ] decide to include / exclude image URL
-- [ ] slightly lighter / darker background color for card
+- [x] slightly lighter / darker background color for card
+- [ ] form validation
