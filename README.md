@@ -18,14 +18,4 @@ the back-end is a Ruby on Rails API.
 
 you _may_ run into a CORS issue when trying to fetch data with a locally running back-end. for help resolving this checkout `config/initializers/cors.rb` in the bonvoyage back-end. you may need to permit certain origins.
 
-todos:
-
-- [ ] use budget field or remove from the backend
-- [ ] incorporate toast or flash banners when a trip/activity is added
-- [x] style dates into more human-readable 'may 6, 2025' notation
-- [ ] add a 'this trip is coming up soon!' type banner for trips less than a month away.
-- [ ] on a similar note... how about trips that have already passed? this could be a rails job perhaps?
-- [x] custom font for appname
-- [ ] decide to include / exclude image URL
-- [x] slightly lighter / darker background color for card
-- [ ] form validation
+#### demo
