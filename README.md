@@ -26,6 +26,8 @@ additionally, it helped me get unblocked with some backend changes in particular
 
 #### demo
 
+https://github.com/user-attachments/assets/79f51cb3-17b1-497c-9c14-223a9a616e58
+
 #### dummy data:
 
 Balinese Paradise Retreat
